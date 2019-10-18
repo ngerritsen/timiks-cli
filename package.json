@@ -1,8 +1,11 @@
 {
-  "name": "timiks",
-  "version": "0.1.0",
+  "name": "timiks-cli",
+  "version": "0.2.0",
   "description": "CLI for speedcubers",
-  "main": "./src",
+  "main": "src/index.js",
+  "bin": {
+    "timiks": "src/index.js"
+  },
   "scripts": {
     "test": "npm run test"
   },
@@ -22,6 +25,7 @@
   },
   "homepage": "https://github.com/ngerritsen/timiks-cli#readme",
   "dependencies": {
+    "commander": "^3.0.2",
     "get-random-values": "^1.2.0",
     "meow": "^5.0.0"
   }

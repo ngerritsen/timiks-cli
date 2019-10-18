@@ -2,6 +2,20 @@
 
 'use strict';
 
-const scramblers = require('./vendor/jsss');
+const program = require('commander');
+const { version } = require('../package.json');
+const scrambler = require('./scrambler');
 
-console.log(scramblers['333'].getRandomScramble().scramble_string);
+program.version(version);
+
+program
+  .command('scramble [type]')
+  .description(`Generate a scramble, options: "${scrambler.getScrambleOptions().join(', ')}"`)
+  .option('-n, --amount <amount>', 'Amount of scrambles', 1, parseInt)
+  .action(scrambler.generateScramble);
+
+program.parse(process.argv);
+
+if (!process.argv.slice(2).length) {
+  program.outputHelp();
+}
