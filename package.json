@@ -12,6 +12,11 @@
   "scripts": {
     "test": "eslint ."
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ngerritsen/timiks-cli.git"
@@ -35,6 +40,7 @@
   "devDependencies": {
     "eslint": "^6.5.1",
     "eslint-plugin-prettier": "^3.1.1",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "husky": "^3.0.9"
   }
 }
